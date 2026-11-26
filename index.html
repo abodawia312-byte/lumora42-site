@@ -103,8 +103,8 @@ h2{font-size:clamp(1.8rem,3.4vw,2.5rem);color:var(--blue);margin:0 0 6px}
 
 /* age filter */
 .js .ages{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 6px}
-html:not(.js) #holiday,html:not(.js) #filter-status:empty{min-height:0;margin:0}
-#filter-status{display:none}
+html:not(.js) #holiday,html:not(.js) #filter-status,html:not(.js) .js-xmas{display:none}
+#filter-status:empty{min-height:0;margin:0}
 .hero .sub{text-wrap:pretty}
 .ages span{font-weight:700;margin-right:4px}
 .chip{min-height:44px;padding:0 16px;border-radius:999px;border:2px solid #5d8fbd;background:#fff;color:var(--blue);font:inherit;font-weight:700;cursor:pointer}
@@ -130,7 +130,7 @@ html:not(.js) #holiday,html:not(.js) #filter-status:empty{min-height:0;margin:0}
 
 /* grid + cards */
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
-@media (min-width:901px){#holiday{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:start}#holiday .grid{grid-template-columns:repeat(2,250px)}#holiday .sub{margin:0 0 18px}#holiday>div:first-child{align-self:stretch;display:flex;flex-direction:column}#holiday .holiday-mascot{margin-top:auto;width:190px}}
+@media (min-width:901px){#holiday{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:28px;align-items:start}#holiday .grid{grid-template-columns:repeat(2,minmax(0,1fr))}#holiday .sub{margin:0 0 18px}#holiday>div:first-child{align-self:stretch;display:flex;flex-direction:column}#holiday .holiday-mascot{margin-top:auto;width:min(190px,100%)}}
 .holiday-mascot{width:150px;height:auto}
 @media (max-width:900px){.holiday-mascot{display:none}}
 .book{background:#fff;border-radius:var(--r);padding:14px;box-shadow:var(--shadow);display:flex;flex-direction:column}
@@ -162,7 +162,7 @@ footer :focus-visible{outline-color:var(--sun)}
 .freebie li{padding-left:28px;position:relative;margin:6px 0}
 .freebie li::before{content:"";position:absolute;left:4px;top:.5em;width:12px;height:12px;border-radius:50%;background:var(--sun)}
 .freebie .small{font-size:.9rem;color:#c9dbec}
-.peek{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.peek{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:380px;margin:0 auto}
 .peek img{border-radius:8px;box-shadow:0 10px 22px rgba(0,0,0,.25);background:#fff;width:100%;height:auto}
 .peek figcaption{grid-column:1/-1;font-size:.88rem;color:#c9dbec;text-align:center}
 .next{display:flex;gap:14px;align-items:center;margin-top:22px;background:rgba(255,255,255,.08);border-radius:18px;padding:12px}
@@ -327,7 +327,7 @@ footer small{display:block;margin-top:6px;color:#aab6c6}
       <div class="section-head">
         <div>
           <h2 id="books-h">Our books</h2>
-          <p class="lead">Every book is sold on Amazon. Choose a cover to see it there.</p>
+          <p class="lead">Every book is sold on Amazon. Each cover and button opens the book's Amazon page.</p>
         </div>
       </div>
       <div class="ages" role="group" aria-labelledby="age-label">
@@ -344,7 +344,7 @@ footer small{display:block;margin-top:6px;color:#aab6c6}
       <div class="band band-holiday" id="holiday">
         <div>
           <h3>Holiday gift picks</h3>
-          <p class="sub">Christmas puzzles and coloring for the weeks before the holidays.</p>
+          <p class="sub" id="holiday-sub">Christmas puzzles and coloring for the weeks before the holidays.</p>
           <img class="holiday-mascot" src="/img/axolotl-pencil.svg" alt="" width="160" height="155" loading="lazy">
         </div>
         <div class="grid">
@@ -375,7 +375,7 @@ footer small{display:block;margin-top:6px;color:#aab6c6}
             <h3>Pickle's Big Weekend</h3>
             <p class="tags"><span class="age">Ages 6–8</span></p>
             <p class="meta">Illustrated chapter book. Kindle, or paperback (<span class="nw">5.5 × 8.5 in</span>, 86 pages).</p>
-            <p>Pickle is the class axolotl in Room 2B. This weekend he goes home with Noor, the shyest kid in class, and meets a giant dog who is scared of socks. A funny illustrated chapter book for early readers.</p>
+            <p>Pickle is the class axolotl in Room 2B. This weekend he goes home with Noor, the shyest kid in class, and meets a giant dog who is scared of socks.</p>
             <div class="ctas">
               <a class="btn btn-pink js-pickle-kindle" href="https://www.amazon.com/dp/B0HRP7G38F" target="_blank" rel="noopener" aria-label="Pickle's Big Weekend: Kindle on Amazon (opens in a new tab)">Kindle on Amazon</a>
               <a class="btn btn-line" href="https://www.amazon.com/dp/B0HRM7X8HN" target="_blank" rel="noopener" aria-label="Pickle's Big Weekend: paperback on Amazon (opens in a new tab)">Paperback</a>
@@ -593,7 +593,8 @@ footer small{display:block;margin-top:6px;color:#aab6c6}
   // Holiday picks show until Dec 25 (Pacific time).
   var y=now.getUTCFullYear(), inHoliday=now>=new Date(y+"-11-01T07:00:00Z")&&now<new Date(y+"-12-26T08:00:00Z");
   if(!inHoliday){var hb=document.getElementById("holiday"); if(hb) hb.remove();}
-  else document.querySelectorAll("#series-ax .js-xmas").forEach(function(c){c.remove();});
+  else { document.querySelectorAll("#series-ax .js-xmas").forEach(function(c){c.remove();});
+    if(now>=new Date(y+"-12-18T08:00:00Z")) document.getElementById("holiday-sub").textContent="Christmas puzzles and coloring for the holiday break."; }
   function markSolo(){document.querySelectorAll("#books .grid").forEach(function(g){var v=[].filter.call(g.children,function(c){return c.classList.contains("book")&&!c.hidden;});[].forEach.call(g.children,function(c){c.classList.remove("solo");});if(v.length%2===1)v[v.length-1].classList.add("solo");});}
   markSolo();
   // Shop by age filter
