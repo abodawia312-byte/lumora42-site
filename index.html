@@ -98,12 +98,12 @@ section.tight{padding-top:8px}.mb{margin-bottom:20px}.mt{margin-top:10px}.peek{m
 section{padding:56px 0}
 .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:22px}
 h2{font-size:clamp(1.8rem,3.4vw,2.5rem);color:var(--blue);margin:0 0 6px}
-.lead{color:var(--muted);margin:0;font-size:1.05rem;max-width:65ch}
-.about p,.feature p,.note,.band .sub,.agehint{max-width:65ch}
+.lead{color:var(--muted);margin:0;font-size:1.05rem}
+.lead,.about p,.feature p,.note,.band .sub,.agehint,.promise p,.freebie p,.freebie ul{max-width:56ch}
 
 /* age filter */
 .js .ages{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 6px}
-html:not(.js) #holiday,html:not(.js) #filter-status,html:not(.js) .js-xmas{display:none}
+html:not(.js) #holiday,html:not(.js) #filter-status{display:none}
 #filter-status:empty{min-height:0;margin:0}
 .hero .sub{text-wrap:pretty}
 .ages span{font-weight:700;margin-right:4px}
@@ -165,7 +165,7 @@ footer :focus-visible{outline-color:var(--sun)}
 .peek{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:380px;margin:0 auto}
 .peek img{border-radius:8px;box-shadow:0 10px 22px rgba(0,0,0,.25);background:#fff;width:100%;height:auto}
 .peek figcaption{grid-column:1/-1;font-size:.88rem;color:#c9dbec;text-align:center}
-.next{display:flex;gap:14px;align-items:center;margin-top:22px;background:rgba(255,255,255,.08);border-radius:18px;padding:12px}
+.next{max-width:380px;margin-left:auto;margin-right:auto;display:flex;gap:14px;align-items:center;margin-top:22px;background:rgba(255,255,255,.08);border-radius:18px;padding:12px}
 .next img{width:56px;border-radius:6px}
 .next a{color:#fff;font-weight:700}
 
@@ -352,7 +352,7 @@ footer small{display:block;margin-top:6px;color:#aab6c6}
   <a class="cover" href="https://www.amazon.com/dp/B0HNLW542N" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://m.media-amazon.com/images/I/71QhcxbrIlL._SL500_.jpg" alt="" width="387" height="500" loading="lazy" decoding="async"></a>
   <h4>Little Axolotl&#x27;s Christmas Activity Book</h4>
   <p class="tags"><span class="age">Ages 4–8</span></p>
-  <p class="meta">Paperback, <span class="nw">8.5 × 11 in</span>, 52 pages</p>
+  <p class="meta">Paperback, <span class="nw">8.5 × 11 in</span>, <span class="nw">52 pages</span></p>
   <p class="desc">Holiday mazes, word searches, sudoku and games.</p>
   <a class="buy" href="https://www.amazon.com/dp/B0HNLW542N" target="_blank" rel="noopener" aria-label="Little Axolotl&#x27;s Christmas Activity Book: See on Amazon, paperback (opens in a new tab)">See on Amazon</a>
 </article>
@@ -360,7 +360,7 @@ footer small{display:block;margin-top:6px;color:#aab6c6}
   <a class="cover" href="https://www.amazon.com/dp/B0HMZW1GWL" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://m.media-amazon.com/images/I/61sjMvhRsFL._SL500_.jpg" alt="" width="500" height="500" loading="lazy" decoding="async"></a>
   <h4>Axolotl&#x27;s 24 Days of Christmas</h4>
   <p class="tags"><span class="age">Ages 4–8</span></p>
-  <p class="meta">Paperback, <span class="nw">8.5 × 8.5 in</span>, 66 pages</p>
+  <p class="meta">Paperback, <span class="nw">8.5 × 8.5 in</span>, <span class="nw">66 pages</span></p>
   <p class="desc">A Christmas countdown coloring book: one picture for each day.</p>
   <a class="buy" href="https://www.amazon.com/dp/B0HMZW1GWL" target="_blank" rel="noopener" aria-label="Axolotl&#x27;s 24 Days of Christmas: See on Amazon, paperback (opens in a new tab)">See on Amazon</a>
 </article>
@@ -392,7 +392,7 @@ footer small{display:block;margin-top:6px;color:#aab6c6}
   <a class="cover" href="https://www.amazon.com/dp/B0HRQXTRH1" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://m.media-amazon.com/images/I/71SujAlJsxL._SL500_.jpg" alt="" width="387" height="500" loading="lazy" decoding="async"></a>
   <h4>Little Axolotl&#x27;s Trace and Draw</h4>
   <p class="tags"><span class="age">Ages 4–6</span></p>
-  <p class="meta">Paperback, <span class="nw">8.5 × 11 in</span>, 114 pages</p>
+  <p class="meta">Paperback, <span class="nw">8.5 × 11 in</span>, <span class="nw">114 pages</span></p>
   <p class="desc">Draw 100 cute things step by step: trace the dots, then draw it on your own.</p>
   <a class="buy" href="https://www.amazon.com/dp/B0HRQXTRH1" target="_blank" rel="noopener" aria-label="Little Axolotl&#x27;s Trace and Draw: See on Amazon, paperback (opens in a new tab)">See on Amazon</a>
 </article>
@@ -400,7 +400,7 @@ footer small{display:block;margin-top:6px;color:#aab6c6}
   <a class="cover" href="https://www.amazon.com/dp/B0HNMJ8P59" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://m.media-amazon.com/images/I/61S3iCimHDL._SL500_.jpg" alt="" width="387" height="500" loading="lazy" decoding="async"></a>
   <h4>Little Axolotl&#x27;s Mazes for Kids</h4>
   <p class="tags"><span class="age">Ages 4–8</span><span class="solved">Solutions</span></p>
-  <p class="meta">Paperback, <span class="nw">8.5 × 11 in</span>, 66 pages</p>
+  <p class="meta">Paperback, <span class="nw">8.5 × 11 in</span>, <span class="nw">66 pages</span></p>
   <p class="desc">50 maze puzzles that go from easy to hard.</p>
   <a class="buy" href="https://www.amazon.com/dp/B0HNMJ8P59" target="_blank" rel="noopener" aria-label="Little Axolotl&#x27;s Mazes for Kids: See on Amazon, paperback (opens in a new tab)">See on Amazon</a>
 </article>
@@ -408,7 +408,7 @@ footer small{display:block;margin-top:6px;color:#aab6c6}
   <a class="cover" href="https://www.amazon.com/dp/B0HP8N1XWB" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://m.media-amazon.com/images/I/61qT0bHa8KL._SL500_.jpg" alt="" width="387" height="500" loading="lazy" decoding="async"></a>
   <h4>Little Axolotl&#x27;s Word Search for Kids</h4>
   <p class="tags"><span class="age">Ages 6–8</span><span class="solved">Solutions</span></p>
-  <p class="meta">Paperback, <span class="nw">8.5 × 11 in</span>, 70 pages</p>
+  <p class="meta">Paperback, <span class="nw">8.5 × 11 in</span>, <span class="nw">70 pages</span></p>
   <p class="desc">50 themed word searches in large print.</p>
   <a class="buy" href="https://www.amazon.com/dp/B0HP8N1XWB" target="_blank" rel="noopener" aria-label="Little Axolotl&#x27;s Word Search for Kids: See on Amazon, paperback (opens in a new tab)">See on Amazon</a>
 </article>
@@ -416,7 +416,7 @@ footer small{display:block;margin-top:6px;color:#aab6c6}
   <a class="cover" href="https://www.amazon.com/dp/B0HQ568NFJ" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://m.media-amazon.com/images/I/61NdeKoC+CL._SL500_.jpg" alt="" width="387" height="500" loading="lazy" decoding="async"></a>
   <h4>Little Axolotl&#x27;s Sudoku for Kids</h4>
   <p class="tags"><span class="age">Ages 6–8</span><span class="solved">Solutions</span></p>
-  <p class="meta">Paperback, <span class="nw">8.5 × 11 in</span>, 70 pages</p>
+  <p class="meta">Paperback, <span class="nw">8.5 × 11 in</span>, <span class="nw">70 pages</span></p>
   <p class="desc">104 puzzles in 4x4, 6x6 and 9x9 grids, easy to hard.</p>
   <a class="buy" href="https://www.amazon.com/dp/B0HQ568NFJ" target="_blank" rel="noopener" aria-label="Little Axolotl&#x27;s Sudoku for Kids: See on Amazon, paperback (opens in a new tab)">See on Amazon</a>
 </article>
@@ -424,7 +424,7 @@ footer small{display:block;margin-top:6px;color:#aab6c6}
   <a class="cover" href="https://www.amazon.com/dp/B0HMZTCR3H" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://m.media-amazon.com/images/I/617pfpu7SfL._SL500_.jpg" alt="" width="500" height="500" loading="lazy" decoding="async"></a>
   <h4>Axolotl Adventures</h4>
   <p class="tags"><span class="age">Ages 4–8</span></p>
-  <p class="meta">Paperback, <span class="nw">8.5 × 8.5 in</span>, 88 pages</p>
+  <p class="meta">Paperback, <span class="nw">8.5 × 8.5 in</span>, <span class="nw">88 pages</span></p>
   <p class="desc">Bold, easy axolotl scenes for crayons and markers.</p>
   <a class="buy" href="https://www.amazon.com/dp/B0HMZTCR3H" target="_blank" rel="noopener" aria-label="Axolotl Adventures: See on Amazon, paperback (opens in a new tab)">See on Amazon</a>
 </article>
@@ -432,7 +432,7 @@ footer small{display:block;margin-top:6px;color:#aab6c6}
   <a class="cover" href="https://www.amazon.com/dp/B0HP8H4NYH" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://m.media-amazon.com/images/I/61AK9MmKM9L._SL500_.jpg" alt="" width="500" height="500" loading="lazy" decoding="async"></a>
   <h4>Capybara Calm</h4>
   <p class="tags"><span class="age">Ages 3–7</span></p>
-  <p class="meta">Paperback, <span class="nw">8.5 × 8.5 in</span>, 88 pages</p>
+  <p class="meta">Paperback, <span class="nw">8.5 × 8.5 in</span>, <span class="nw">88 pages</span></p>
   <p class="desc">Calm, happy capybaras in big, simple pictures.</p>
   <a class="buy" href="https://www.amazon.com/dp/B0HP8H4NYH" target="_blank" rel="noopener" aria-label="Capybara Calm: See on Amazon, paperback (opens in a new tab)">See on Amazon</a>
 </article>
@@ -440,7 +440,7 @@ footer small{display:block;margin-top:6px;color:#aab6c6}
   <a class="cover" href="https://www.amazon.com/dp/B0HNLW542N" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://m.media-amazon.com/images/I/71QhcxbrIlL._SL500_.jpg" alt="" width="387" height="500" loading="lazy" decoding="async"></a>
   <h4>Little Axolotl&#x27;s Christmas Activity Book</h4>
   <p class="tags"><span class="age">Ages 4–8</span></p>
-  <p class="meta">Paperback, <span class="nw">8.5 × 11 in</span>, 52 pages</p>
+  <p class="meta">Paperback, <span class="nw">8.5 × 11 in</span>, <span class="nw">52 pages</span></p>
   <p class="desc">Holiday mazes, word searches, sudoku and games.</p>
   <a class="buy" href="https://www.amazon.com/dp/B0HNLW542N" target="_blank" rel="noopener" aria-label="Little Axolotl&#x27;s Christmas Activity Book: See on Amazon, paperback (opens in a new tab)">See on Amazon</a>
 </article>
@@ -448,7 +448,7 @@ footer small{display:block;margin-top:6px;color:#aab6c6}
   <a class="cover" href="https://www.amazon.com/dp/B0HMZW1GWL" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://m.media-amazon.com/images/I/61sjMvhRsFL._SL500_.jpg" alt="" width="500" height="500" loading="lazy" decoding="async"></a>
   <h4>Axolotl&#x27;s 24 Days of Christmas</h4>
   <p class="tags"><span class="age">Ages 4–8</span></p>
-  <p class="meta">Paperback, <span class="nw">8.5 × 8.5 in</span>, 66 pages</p>
+  <p class="meta">Paperback, <span class="nw">8.5 × 8.5 in</span>, <span class="nw">66 pages</span></p>
   <p class="desc">A Christmas countdown coloring book: one picture for each day.</p>
   <a class="buy" href="https://www.amazon.com/dp/B0HMZW1GWL" target="_blank" rel="noopener" aria-label="Axolotl&#x27;s 24 Days of Christmas: See on Amazon, paperback (opens in a new tab)">See on Amazon</a>
 </article>
@@ -463,7 +463,7 @@ footer small{display:block;margin-top:6px;color:#aab6c6}
   <a class="cover" href="https://www.amazon.com/dp/B0HRZHYVJN" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://m.media-amazon.com/images/I/71SeuHdU7BL._SL500_.jpg" alt="" width="387" height="500" loading="lazy" decoding="async"></a>
   <h4>My First Words Coloring Book</h4>
   <p class="tags"><span class="age">Ages 1–3</span></p>
-  <p class="meta">Paperback, <span class="nw">8.5 × 11 in</span>, 108 pages</p>
+  <p class="meta">Paperback, <span class="nw">8.5 × 11 in</span>, <span class="nw">108 pages</span></p>
   <p class="desc">50 big, simple pictures to color and name.</p>
   <a class="buy" href="https://www.amazon.com/dp/B0HRZHYVJN" target="_blank" rel="noopener" aria-label="My First Words Coloring Book: See on Amazon, paperback (opens in a new tab)">See on Amazon</a>
 </article>
@@ -471,7 +471,7 @@ footer small{display:block;margin-top:6px;color:#aab6c6}
   <a class="cover" href="https://www.amazon.com/dp/B0HRZ2JZWW" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://m.media-amazon.com/images/I/61dLpNOgQyL._SL500_.jpg" alt="" width="387" height="500" loading="lazy" decoding="async"></a>
   <h4>Little Hands Under the Sea</h4>
   <p class="tags"><span class="age">Ages 3–5</span></p>
-  <p class="meta">Paperback, <span class="nw">8.5 × 11 in</span>, 106 pages</p>
+  <p class="meta">Paperback, <span class="nw">8.5 × 11 in</span>, <span class="nw">106 pages</span></p>
   <p class="desc">Pencil control, cutting, counting, mazes and dot-to-dot.</p>
   <a class="buy" href="https://www.amazon.com/dp/B0HRZ2JZWW" target="_blank" rel="noopener" aria-label="Little Hands Under the Sea: See on Amazon, paperback (opens in a new tab)">See on Amazon</a>
 </article>
@@ -479,7 +479,7 @@ footer small{display:block;margin-top:6px;color:#aab6c6}
   <a class="cover" href="https://www.amazon.com/dp/B0HQ4Z1389" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://m.media-amazon.com/images/I/61xC5uuUs7L._SL500_.jpg" alt="" width="387" height="500" loading="lazy" decoding="async"></a>
   <h4>Little Hands ABC</h4>
   <p class="tags"><span class="age">Ages 3–5</span></p>
-  <p class="meta">Paperback, <span class="nw">8.5 × 11 in</span>, 50 pages</p>
+  <p class="meta">Paperback, <span class="nw">8.5 × 11 in</span>, <span class="nw">50 pages</span></p>
   <p class="desc">Trace and learn every letter from A to Z.</p>
   <a class="buy" href="https://www.amazon.com/dp/B0HQ4Z1389" target="_blank" rel="noopener" aria-label="Little Hands ABC: See on Amazon, paperback (opens in a new tab)">See on Amazon</a>
 </article>
@@ -502,7 +502,7 @@ footer small{display:block;margin-top:6px;color:#aab6c6}
             <li>An answer page for grown-ups</li>
           </ul>
           <a class="btn btn-sun" href="/little-axolotl-free-activity-pack.pdf" download>Download the free PDF</a>
-          <p class="small mt">6-page PDF, 54 KB, US Letter size. Nothing happened? Open this page in your phone's browser and tap again.</p>
+          <p class="small mt">6-page PDF, 54 KB, US Letter size. If nothing happens inside the TikTok, Instagram or Pinterest app, open this page in your browser and tap again.</p>
         </div>
         <div>
           <figure class="peek">
