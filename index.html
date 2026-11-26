@@ -103,7 +103,8 @@ h2{font-size:clamp(1.8rem,3.4vw,2.5rem);color:var(--blue);margin:0 0 6px}
 
 /* age filter */
 .js .ages{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 6px}
-html:not(.js) #holiday,html:not(.js) #filter-status{display:none}
+html:not(.js) #holiday,html:not(.js) #filter-status:empty{min-height:0;margin:0}
+#filter-status{display:none}
 .hero .sub{text-wrap:pretty}
 .ages span{font-weight:700;margin-right:4px}
 .chip{min-height:44px;padding:0 16px;border-radius:999px;border:2px solid #5d8fbd;background:#fff;color:var(--blue);font:inherit;font-weight:700;cursor:pointer}
@@ -129,7 +130,7 @@ html:not(.js) #holiday,html:not(.js) #filter-status{display:none}
 
 /* grid + cards */
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
-@media (min-width:901px){#holiday{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:start}#holiday .grid{grid-template-columns:repeat(2,250px)}#holiday .sub{margin:0 0 18px}}
+@media (min-width:901px){#holiday{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:start}#holiday .grid{grid-template-columns:repeat(2,250px)}#holiday .sub{margin:0 0 18px}#holiday>div:first-child{align-self:stretch;display:flex;flex-direction:column}#holiday .holiday-mascot{margin-top:auto;width:190px}}
 .holiday-mascot{width:150px;height:auto}
 @media (max-width:900px){.holiday-mascot{display:none}}
 .book{background:#fff;border-radius:var(--r);padding:14px;box-shadow:var(--shadow);display:flex;flex-direction:column}
@@ -208,11 +209,12 @@ footer small{display:block;margin-top:6px;color:#aab6c6}
 @media (min-width:601px) and (max-width:900px){
  .band .feature{grid-template-columns:200px minmax(0,1fr);align-items:start}
  .band .feature .cover-lg{max-width:none}
- #holiday .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ #holiday .grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+ #holiday .holiday-mascot{display:block;position:absolute;right:40px;bottom:40px;width:min(150px,22%)}
 }
 @media (max-width:600px){
  .book .cover{aspect-ratio:387/500;padding:6px}
- .grid>.book:last-child:nth-child(odd){grid-column:1/-1;justify-self:center;width:calc(50% - 6px)}
+ .grid>.book.solo{grid-column:1/-1;justify-self:center;width:calc(50% - 6px)}
  .by-m{display:inline}
  .eyebrow{display:none!important}
  .fan{height:180px!important}
@@ -253,8 +255,9 @@ footer small{display:block;margin-top:6px;color:#aab6c6}
  section{padding:40px 0}
 }
 @media (max-width:380px){.logo{font-size:1.1rem;gap:7px}.logo svg{width:32px;height:30px}.nav nav a{padding:0 8px;font-size:.92rem}}
+@media (min-width:601px) and (max-width:700px){.buy{font-size:.86rem;padding:0 10px}}
 @media (max-width:400px){.hero h1{font-size:1.75rem}.hero .wrap{gap:12px}}
-@media (max-width:340px){.hero h1{font-size:1.6rem}.buy{padding:0 6px;font-size:.82rem}.logo small{display:none}.nav nav a{padding:0 6px;font-size:.86rem}}
+@media (max-width:340px){.hero h1{font-size:1.6rem}.grid{gap:10px}.book{padding:8px}.buy{padding:0 8px;font-size:.8rem}.logo small{display:none}.nav nav a{padding:0 6px;font-size:.86rem}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Person", "@id": "https://lumora42.shop/#author", "name": "Mohamed Abdo", "url": "https://lumora42.shop/", "sameAs": ["https://www.amazon.com/author/mohamedabdo", "https://www.pinterest.com/littleaxolotlbooks/"]}, {"@type": "WebSite", "name": "Little Axolotl Books", "url": "https://lumora42.shop/"}, {"@type": "ItemList", "name": "Little Axolotl Books catalogue", "itemListElement": [{"@type": "ListItem", "position": 1, "item": {"@type": "Book", "name": "Pickle's Big Weekend", "author": {"@id": "https://lumora42.shop/#author"}, "url": "https://www.amazon.com/dp/B0HRP7G38F", "image": "https://m.media-amazon.com/images/I/81B0a3DetzL._SL500_.jpg", "inLanguage": "en", "bookFormat": "https://schema.org/EBook", "audience": {"@type": "PeopleAudience", "suggestedMinAge": 6, "suggestedMaxAge": 8}, "workExample": [{"@type": "Book", "bookFormat": "https://schema.org/Paperback", "url": "https://www.amazon.com/dp/B0HRM7X8HN", "numberOfPages": 86}]}}, {"@type": "ListItem", "position": 2, "item": {"@type": "Book", "name": "Little Axolotl's Trace and Draw", "author": {"@id": "https://lumora42.shop/#author"}, "url": "https://www.amazon.com/dp/B0HRQXTRH1", "image": "https://m.media-amazon.com/images/I/71SujAlJsxL._SL500_.jpg", "inLanguage": "en", "bookFormat": "https://schema.org/Paperback", "numberOfPages": 114, "audience": {"@type": "PeopleAudience", "suggestedMinAge": 4, "suggestedMaxAge": 6}}}, {"@type": "ListItem", "position": 3, "item": {"@type": "Book", "name": "Little Axolotl's Mazes for Kids", "author": {"@id": "https://lumora42.shop/#author"}, "url": "https://www.amazon.com/dp/B0HNMJ8P59", "image": "https://m.media-amazon.com/images/I/61S3iCimHDL._SL500_.jpg", "inLanguage": "en", "bookFormat": "https://schema.org/Paperback", "numberOfPages": 66, "audience": {"@type": "PeopleAudience", "suggestedMinAge": 4, "suggestedMaxAge": 8}}}, {"@type": "ListItem", "position": 4, "item": {"@type": "Book", "name": "Little Axolotl's Word Search for Kids", "author": {"@id": "https://lumora42.shop/#author"}, "url": "https://www.amazon.com/dp/B0HP8N1XWB", "image": "https://m.media-amazon.com/images/I/61qT0bHa8KL._SL500_.jpg", "inLanguage": "en", "bookFormat": "https://schema.org/Paperback", "numberOfPages": 70, "audience": {"@type": "PeopleAudience", "suggestedMinAge": 6, "suggestedMaxAge": 8}}}, {"@type": "ListItem", "position": 5, "item": {"@type": "Book", "name": "Little Axolotl's Sudoku for Kids", "author": {"@id": "https://lumora42.shop/#author"}, "url": "https://www.amazon.com/dp/B0HQ568NFJ", "image": "https://m.media-amazon.com/images/I/61NdeKoC+CL._SL500_.jpg", "inLanguage": "en", "bookFormat": "https://schema.org/Paperback", "numberOfPages": 70, "audience": {"@type": "PeopleAudience", "suggestedMinAge": 6, "suggestedMaxAge": 8}}}, {"@type": "ListItem", "position": 6, "item": {"@type": "Book", "name": "Axolotl Adventures", "author": {"@id": "https://lumora42.shop/#author"}, "url": "https://www.amazon.com/dp/B0HMZTCR3H", "image": "https://m.media-amazon.com/images/I/617pfpu7SfL._SL500_.jpg", "inLanguage": "en", "bookFormat": "https://schema.org/Paperback", "numberOfPages": 88, "audience": {"@type": "PeopleAudience", "suggestedMinAge": 4, "suggestedMaxAge": 8}}}, {"@type": "ListItem", "position": 7, "item": {"@type": "Book", "name": "Capybara Calm", "author": {"@id": "https://lumora42.shop/#author"}, "url": "https://www.amazon.com/dp/B0HP8H4NYH", "image": "https://m.media-amazon.com/images/I/61AK9MmKM9L._SL500_.jpg", "inLanguage": "en", "bookFormat": "https://schema.org/Paperback", "numberOfPages": 88, "audience": {"@type": "PeopleAudience", "suggestedMinAge": 3, "suggestedMaxAge": 7}}}, {"@type": "ListItem", "position": 8, "item": {"@type": "Book", "name": "Little Axolotl's Christmas Activity Book", "author": {"@id": "https://lumora42.shop/#author"}, "url": "https://www.amazon.com/dp/B0HNLW542N", "image": "https://m.media-amazon.com/images/I/71QhcxbrIlL._SL500_.jpg", "inLanguage": "en", "bookFormat": "https://schema.org/Paperback", "numberOfPages": 52, "audience": {"@type": "PeopleAudience", "suggestedMinAge": 4, "suggestedMaxAge": 8}}}, {"@type": "ListItem", "position": 9, "item": {"@type": "Book", "name": "Axolotl's 24 Days of Christmas", "author": {"@id": "https://lumora42.shop/#author"}, "url": "https://www.amazon.com/dp/B0HMZW1GWL", "image": "https://m.media-amazon.com/images/I/61sjMvhRsFL._SL500_.jpg", "inLanguage": "en", "bookFormat": "https://schema.org/Paperback", "numberOfPages": 66, "audience": {"@type": "PeopleAudience", "suggestedMinAge": 4, "suggestedMaxAge": 8}}}, {"@type": "ListItem", "position": 10, "item": {"@type": "Book", "name": "My First Words Coloring Book", "author": {"@id": "https://lumora42.shop/#author"}, "url": "https://www.amazon.com/dp/B0HRZHYVJN", "image": "https://m.media-amazon.com/images/I/71SeuHdU7BL._SL500_.jpg", "inLanguage": "en", "bookFormat": "https://schema.org/Paperback", "numberOfPages": 108, "audience": {"@type": "PeopleAudience", "suggestedMinAge": 1, "suggestedMaxAge": 3}}}, {"@type": "ListItem", "position": 11, "item": {"@type": "Book", "name": "Little Hands Under the Sea", "author": {"@id": "https://lumora42.shop/#author"}, "url": "https://www.amazon.com/dp/B0HRZ2JZWW", "image": "https://m.media-amazon.com/images/I/61dLpNOgQyL._SL500_.jpg", "inLanguage": "en", "bookFormat": "https://schema.org/Paperback", "numberOfPages": 106, "audience": {"@type": "PeopleAudience", "suggestedMinAge": 3, "suggestedMaxAge": 5}}}, {"@type": "ListItem", "position": 12, "item": {"@type": "Book", "name": "Little Hands ABC", "author": {"@id": "https://lumora42.shop/#author"}, "url": "https://www.amazon.com/dp/B0HQ4Z1389", "image": "https://m.media-amazon.com/images/I/61xC5uuUs7L._SL500_.jpg", "inLanguage": "en", "bookFormat": "https://schema.org/Paperback", "numberOfPages": 50, "audience": {"@type": "PeopleAudience", "suggestedMinAge": 3, "suggestedMaxAge": 5}}}]}]}</script>
@@ -368,7 +371,7 @@ footer small{display:block;margin-top:6px;color:#aab6c6}
         <article class="feature book" data-ages="6 7 8">
           <a class="cover-lg" href="https://www.amazon.com/dp/B0HRP7G38F" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://m.media-amazon.com/images/I/81B0a3DetzL._SL500_.jpg" alt="" width="313" height="500" loading="lazy" decoding="async"></a>
           <div>
-            <p class="series-tag">Pickle the Little Axolotl, book 1</p>
+            <p class="series-tag">Pickle the Little Axolotl, book&nbsp;1</p>
             <h3>Pickle's Big Weekend</h3>
             <p class="tags"><span class="age">Ages 6–8</span></p>
             <p class="meta">Illustrated chapter book. Kindle, or paperback (<span class="nw">5.5 × 8.5 in</span>, 86 pages).</p>
@@ -565,7 +568,7 @@ footer small{display:block;margin-top:6px;color:#aab6c6}
   <div class="wrap">
     <div>© <span id="yr">2026</span> Little Axolotl Books by Mohamed Abdo
       <small>Amazon, Kindle and the Amazon logo are trademarks of Amazon.com, Inc. or its affiliates.</small></div>
-    <nav aria-label="Footer"><a href="#books">Books</a><a href="#about">About</a><a href="#free">Free printables</a><a href="/privacy.html">Privacy</a><a href="mailto:info@lumora42.shop?subject=Question%20about%20Little%20Axolotl%20books">Contact</a></nav>
+    <nav aria-label="Footer"><a href="#books">Books</a><a href="#about">About</a><a href="#free">Free printable pack</a><a href="/privacy.html">Privacy</a><a href="mailto:info@lumora42.shop?subject=Question%20about%20Little%20Axolotl%20books">Contact</a></nav>
   </div>
 </footer>
 
@@ -591,6 +594,8 @@ footer small{display:block;margin-top:6px;color:#aab6c6}
   var y=now.getUTCFullYear(), inHoliday=now>=new Date(y+"-11-01T07:00:00Z")&&now<new Date(y+"-12-26T08:00:00Z");
   if(!inHoliday){var hb=document.getElementById("holiday"); if(hb) hb.remove();}
   else document.querySelectorAll("#series-ax .js-xmas").forEach(function(c){c.remove();});
+  function markSolo(){document.querySelectorAll("#books .grid").forEach(function(g){var v=[].filter.call(g.children,function(c){return c.classList.contains("book")&&!c.hidden;});[].forEach.call(g.children,function(c){c.classList.remove("solo");});if(v.length%2===1)v[v.length-1].classList.add("solo");});}
+  markSolo();
   // Shop by age filter
   var chips=document.querySelectorAll(".chip"), status=document.getElementById("filter-status");
   chips.forEach(function(c){c.addEventListener("click",function(){
@@ -602,6 +607,7 @@ footer small{display:block;margin-top:6px;color:#aab6c6}
       b.hidden=!ok; var t=(b.querySelector("h4,h3")||{}).textContent; if(ok&&!seen[t]){seen[t]=1;shown++;}
     });
     document.querySelectorAll("#books .band").forEach(function(band){band.hidden=!band.querySelector(".book:not([hidden])");});
+    markSolo();
     status.textContent=v==="all"?"Showing all "+shown+" books":"Showing "+shown+(shown===1?" book":" books")+" for ages "+v.replace("-","–");
   });});
   // Sticky "See the books" bar on phones, hidden while the hero or the books are on screen
